@@ -24,7 +24,7 @@ pip install anthropic  # for anthropic
 
 ## Models
 
-1. We use a finetuned RoBERTa-large model [huggingface](https://huggingface.co/hubert233/GPTFuzz) from [GPTFuzz](https://github.com/sherdencooper/GPTFuzz) as our first-level judge model. 
+1. We use a finetuned RoBERTa-large model [huggingface](https://huggingface.co/hubert233/GPTFuzz) from [GPTFuzz](https://github.com/sherdencooper/GPTFuzz) as our first-level judge model. Please download it to "./roberta".
 
 2. For the second-level judge model, we need to set api-key for gpt judge model:
 
