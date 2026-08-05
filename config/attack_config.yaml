@@ -1,0 +1,47 @@
+# General settings
+target_models:
+  - gpt-3.5-turbo
+  - gpt-4
+  - claude-3-opus
+  - claude-3-sonnet
+
+# Attack parameters
+iterations_per_attack: 100
+max_questions: 50
+parallel_workers: 4
+
+# Script-specific settings
+dynamic_mutation:
+  bandit_algorithm: "UCB"
+  exploration_rate: 0.1
+  memory_size: 1000
+
+cot_poisoning:
+  reasoning_length: 3-5
+  bridge_templates: ["logical", "academic", "curiosity"]
+
+multiturn:
+  max_turns: 5
+  personas: ["researcher", "student", "professional"]
+  trust_building_questions: 2
+
+ensemble:
+  fuzzing_models: ["gpt-4", "claude-3-opus", "gpt-3.5-turbo"]
+  aggregation_method: "weighted_vote"
+  min_mutations_per_model: 10
+
+embedding_fitness:
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  similarity_threshold: 0.7
+  novelty_weight: 0.3
+
+multilingual:
+  languages: ["ar", "zh", "ru", "ja", "hi", "fr", "es", "sw", "bn", "ur", "de", "ko", "pt", "it", "nl", "pl", "vi", "th", "he", "fa"]
+  code_switching_mix: 0.3
+  cultural_context: true
+
+# Dashboard settings
+dashboard:
+  port: 8050
+  update_interval: 60
+  retention_days: 30
